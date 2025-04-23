@@ -13,8 +13,8 @@ format:
       height: 100%;
     }
     #map {
-      height: calc(100vh - 200px) !important; 
-      margin-top: -50px !important;
+      height: calc(100vh - 80px) !important; 
+      margin-top: -40px !important;
       width: 100%;
     }
     h1.title, .title.h1 {
@@ -26,6 +26,9 @@ format:
     }
     footer {
     z-index: 1000;
+    position: absolute;
+    /* margin: 10px 0 -200px -10px; */
+    margin: 10px 0 -20px -20px;
     }
   </style>
 
