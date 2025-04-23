@@ -4,16 +4,18 @@ project:
 
 website:
   title: "Safer Parks"
+  cookie-consent: true
   navbar:
     left:
       - href: content/index.qmd
         text: Home
-      - content/about.qmd
+      - content/dashboard-info.qmd
+      - content/full-screen.qmd
 
 format:
   html:
-    theme: cosmo
-    css: assets/css/styles.css
+    theme: [assets/styles/custom.scss, cosmo]
+    css: [assets/styles/styles.css, assets/styles/fonts.css]
     toc: true
 
 

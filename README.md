@@ -43,6 +43,18 @@ safer-parks/
 
 To [modify and update this file tree, follow this link](https://tree.nathanfriend.com/?s=(%27options!(%27fancy!true~fullPath!false~trailingSlash!true~rootDot!false)~3(%273%27safer-parks*assets0font20img%2F0j20style2*content4qmd6data7docs4html6_quarto.yml*.gitignore*.quarto7README.md*LICENSE.txt%27)~version!%271%27)*%5Cn50*52s%2F3source!40index.5%20%2060...*7%2F*%017654320*).
 
+### `docs/`
+
+This folder contains the built content produced by `quarto render` and shouldn't be modified by hand.
+
+### `data/`
+
+We may decide instead to point at an external repository for the dataset; however for the moment this folder exists to hold small datasets that are used by the webapp.
+
+### `assets/fonts/` and `assets/styles/fonts.css`
+
+These folder contain the local fonts to prevent API calls to Google fonts which are not compliant with GDPR. This [YouTube video](https://www.youtube.com/watch?v=vaPBOqfus7w) details how to use the `gfonts` R package to download and organise fonts from Google fonts to use them locally (in compliance with GDPR).
+
 ## Fonts and GDPR guidelines
 
 In order to comply with GDPR guidelines, the custom scss files for this project prevent Quarto loading Google Fonts on the fly. Instead, all custom fonts must be stored locally in this directory. See previous section for directory structure.

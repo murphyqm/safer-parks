@@ -1,0 +1,32 @@
+---
+title: "Dashboard - larger view"
+format: 
+  html:
+    page-layout: full
+---
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+
+<div id="map-wrapper" style="position: relative;">
+<div id="controls">
+<label for="regionFilter">Filter by Region:</label>
+<select id="regionFilter">
+    <option value="">All</option>
+</select>
+
+<fieldset>
+    <legend><strong>Layer Type</strong></legend>
+    <label><input type="radio" name="layerType" value="counties" checked> Counties</label>
+    <label><input type="radio" name="layerType" value="schools"> Schools</label>
+    <label><input type="radio" name="layerType" value="clinics"> Clinics</label>
+    <label><input type="radio" name="layerType" value="all"> All Layers</label>
+    </fieldset>      
+</div>
+<button id="toggleSidebar">☰ Filters</button>
+<div id="map"></div>                       
+</div>
+
+<script type="text/plain" cookie-consent="strictly-necessary" src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<script type="text/plain" cookie-consent="strictly-necessary" src="../assets/js/script.js"></script>
+
+I'm currently experimenting with how we can do a full-screen (or close to) within Quarto (instead of the custom HTML file) to 1) make it easier to update both the embedded version and fullscreen version at the same time and 2) so that the implementation with our cookie consent is more streamlined.
