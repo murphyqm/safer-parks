@@ -26,12 +26,5 @@
     "title": "Landing page",
     "section": "",
     "text": "This is the home page of the website, written in markdown. You might want to embed the dashboard here directly, or just have an information screen if you don’t want to overwhelm users.\nFor this example, I’ve kept this page minimal and have added a button below to view the webapp (or you can use the navbar at the top).\nOf course, this can be made more colourful and friendly, with the addition of images, illustrations, etc.\n🗖 View Dashboard Fullscreen"
-  },
-  {
-    "objectID": "content/full-screen.html",
-    "href": "content/full-screen.html",
-    "title": "Dashboard - larger view",
-    "section": "",
-    "text": "Filter by Region:  All \n\nLayer Type  Counties  Schools  Clinics  All Layers\n\n\n\n☰ Filters\n\n\n\n\n\n\n\nI’m currently experimenting with how we can do a full-screen (or close to) within Quarto (instead of the custom HTML file) to 1) make it easier to update both the embedded version and fullscreen version at the same time and 2) so that the implementation with our cookie consent is more streamlined."
   }
 ]
