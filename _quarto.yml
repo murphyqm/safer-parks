@@ -1,0 +1,20 @@
+project:
+  type: website
+  output-dir: docs/
+
+website:
+  title: "Safer Parks"
+  navbar:
+    left:
+      - href: content/index.qmd
+        text: Home
+      - content/about.qmd
+
+format:
+  html:
+    theme: cosmo
+    css: assets/css/styles.css
+    toc: true
+
+
+

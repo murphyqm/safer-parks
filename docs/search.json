@@ -1,0 +1,16 @@
+[
+  {
+    "objectID": "content/about.html",
+    "href": "content/about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site"
+  },
+  {
+    "objectID": "content/index.html",
+    "href": "content/index.html",
+    "title": "Safer Parks",
+    "section": "",
+    "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites."
+  }
+]
