@@ -11,11 +11,14 @@ format:
       margin: 0;
       padding: 0;
       height: 100%;
+      overflow: hidden; /* Hide scrollbars */
     }
     #map {
       height: calc(100vh - 80px) !important; 
       margin-top: -40px !important;
       width: 100%;
+      display: flex;
+      flex-direction: column;
     }
     h1.title, .title.h1 {
     margin-top: 0;
@@ -26,9 +29,15 @@ format:
     }
     footer {
     z-index: 1000;
+    display: block;
     position: absolute;
-    /* margin: 10px 0 -200px -10px; */
-    margin: 10px 0 -20px -20px;
+    margin: 0 0 auto auto;
+    max-height: 200px;
+    }
+    @media (min:width: 768px) {
+        .nav-footer-right {
+            display: block;
+        }
     }
   </style>
 
@@ -54,3 +63,4 @@ format:
 <script type="text/plain" cookie-consent="strictly-necessary" src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 <script type="text/plain" cookie-consent="strictly-necessary" src="../assets/js/script.js"></script>
 
+<div style="flex-grow:1"></div>
