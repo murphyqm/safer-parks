@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Dashboard – Safer Parks</title>
+<title>Testing controls – Safer Parks</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -114,7 +114,7 @@ cookieconsent.run({
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="../content/dashboard-info.html" aria-current="page"> 
+    <a class="nav-link" href="../content/dashboard-info.html"> 
 <span class="menu-text">Dashboard</span></a>
   </li>  
   <li class="nav-item">
@@ -122,7 +122,7 @@ cookieconsent.run({
 <span class="menu-text">Dashboard: fullscreen</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../content/testing-control-options.html"> 
+    <a class="nav-link active" href="../content/testing-control-options.html" aria-current="page"> 
 <span class="menu-text">Testing controls</span></a>
   </li>  
   <li class="nav-item">
@@ -137,25 +137,14 @@ cookieconsent.run({
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<div id="quarto-content" class="quarto-container page-layout-custom page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#logistical-details" id="toc-logistical-details" class="nav-link active" data-scroll-target="#logistical-details">Logistical details</a></li>
-  <li><a href="#embedded-dashboard" id="toc-embedded-dashboard" class="nav-link" data-scroll-target="#embedded-dashboard">Embedded dashboard</a></li>
-  </ul>
-</nav>
-    </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Dashboard</h1>
+<h1 class="title">Testing controls</h1>
 </div>
 
 
@@ -173,40 +162,64 @@ cookieconsent.run({
 
 
 <!-- <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" /> -->
-<p><link rel="stylesheet" href="../assets/styles/leaflet.css"></p>
-<p>This is the dashboard page. It includes an HTML snippet (and loads in custom javascript) in order to provide the dashboard below. While this is a fully functional version of the dashboard, presentation like this (in a frame within a website) might be restrictive and make it more difficult to use, so there is also a provided link to go full-size.</p>
-<p>At the moment, both the embedded version and the full screen version are two separate, fully-functional replicated apps to ensure they work nicely in both formats; however as we develop the app this may become tedious and we might instead implement conditional styling that updates depending on whether you are looking at the content full-screen or not.</p>
-<p>Alternatively, if the homepage of the webapp is a text-based page that describes the use of the app, we might not have to keep this “framing page” at all, and instead the “Dashboard” link directly launches the full-screen version. We just need to keep in mind that the user needs some context and direction before being thrown in at the deep-end with the tool.</p>
-<section id="logistical-details" class="level2">
-<h2 class="anchored" data-anchor-id="logistical-details">Logistical details</h2>
-<p>At the top of this page, the leaflet css stylesheet is loaded. We can include a note for this in the cookies banner, or load it locally. Currently, it is loaded locally.</p>
-</section>
-<section id="embedded-dashboard" class="level2">
-<h2 class="anchored" data-anchor-id="embedded-dashboard">Embedded dashboard</h2>
-<p>Note - the fullscreen version linked below currently isn’t correctly pulling through data because of the directory structure - on the list to fix!</p>
-<p>You will see a blank box below if you haven’t accepted the necessary cookies.</p>
-<div id="map-wrapper" style="position: relative;">
+<link rel="stylesheet" href="../assets/styles/leaflet.css">
+<style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: hidden; /* Hide scrollbars */
+    }
+    #map {
+      height: calc(100vh - 80px) !important; 
+      margin-top: -40px !important;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+    h1.title, .title.h1 {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-bottom: 0px;
+    font-size: 0.9rem;
+    display: none;
+    }
+    footer {
+    z-index: 1000;
+    display: block;
+    position: absolute;
+    margin: 0 0 auto auto;
+    max-height: 200px;
+    }
+    @media (min:width: 768px) {
+        .nav-footer-right {
+            display: block;
+        }
+    }
+  </style>
+<div id="fullscreen-map-wrapper">
 <div id="controls">
 <p><label for="regionFilter">Filter by Region:</label> <select id="regionFilter"> <option value="">All</option> </select></p>
 <fieldset>
-<legend><strong>Layer Type</strong></legend> <label><input type="radio" name="layerType" value="counties" checked=""> Counties</label> <label><input type="radio" name="layerType" value="schools"> Schools</label> <label><input type="radio" name="layerType" value="clinics"> Clinics</label> <label><input type="radio" name="layerType" value="all"> All Layers</label>
+<legend><strong>Layer Type</strong></legend> <label><input type="checkbox" class="layerCheckbox" value="counties" checked=""> Counties</label> <label><input type="checkbox" class="layerCheckbox" value="schools" checked=""> Schools</label> <label><input type="checkbox" class="layerCheckbox" value="clinics" checked=""> Clinics</label> <label><input type="checkbox" class="layerCheckbox" value="parkruns" checked=""> Park Runs</label><br> <button type="button" id="selectAllBtn">Deselect All</button>
 </fieldset>
 </div>
 <button id="toggleSidebar">
 ☰ Filters
 </button>
-<a href="../content/full-screen.html" id="fullscreenBtn">🗖 View Fullscreen</a>
 <div id="map">
 
 </div>
 </div>
-<script type="text/plain" cookie-consent="functionality" src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-<script type="text/plain" cookie-consent="functionality" src="../assets/js/script.js"></script>
+<script type="text/plain" cookie-consent="strictly-necessary" src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<script type="text/plain" cookie-consent="strictly-necessary" src="../assets/js/test-control-options.js"></script>
+<div style="flex-grow:1">
+
+</div>
 
 
-</section>
 
-</main> <!-- /main -->
+
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
