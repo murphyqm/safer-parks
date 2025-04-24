@@ -152,14 +152,22 @@ border: 1px solid #ccc;
 
 fieldset {
 border: none;
-margin-top: 15px;
+margin: 0;
 padding: 0;
 }
 
 legend {
-font-size: 14px;
 font-weight: bold;
-margin-bottom: 8px;
+margin: 0 0 6px 0;
+padding: 0;
+font-size: 14px;
+}
+
+fieldset legend {
+font-weight: bold;
+margin: 0 0 6px 0;
+padding: 0;
+font-size: 14px;
 }
 
 label {
@@ -172,14 +180,14 @@ input[type="radio"] {
 margin-right: 8px;
 }
 
-/* Optional: Radio pill buttons */
+/* Optional: Radio pill buttons
 fieldset label {
 background: #f1f3f5;
 border-radius: 20px;
 padding: 6px 12px;
 cursor: pointer;
 transition: all 0.2s ease-in-out;
-}
+} */
 
 fieldset label:hover {
 background: #dee2e6;
@@ -189,6 +197,28 @@ fieldset input[type="radio"]:checked + label {
 background-color: #007bff;
 color: white;
 }
+
+/* Style labels with checkboxes inline */
+.layerCheckbox {
+    margin-right: 6px;
+  }
+  
+fieldset label {
+display: flex;
+align-items: center;
+margin: 0;
+padding: 2px 0;
+font-size: 16px;
+line-height: 1.6;
+cursor: pointer;
+color: #333;
+}
+
+/* Optional hover effect for labels */
+fieldset label:hover {
+color: #007bff;
+}
+
 
 /* Custom circle marker styles via class (optional) */
 .school-point {
@@ -235,3 +265,21 @@ color: #0056b3;
 .leaflet-control-zoom-out:focus {
 outline: none;  /* Remove the focus outline */
 }
+
+/* Style for the "Select All" button */
+#selectAllBtn {
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 6px 12px;
+    font-size: 14px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background 0.3s ease;
+    display: block;
+  }
+  
+  #selectAllBtn:hover {
+    background-color: #0056b3;
+  }
