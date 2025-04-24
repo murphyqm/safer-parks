@@ -1,5 +1,19 @@
 [
   {
+    "objectID": "content/testing-table-displays.html",
+    "href": "content/testing-table-displays.html",
+    "title": "Testing table displays",
+    "section": "",
+    "text": "Testing different display options for organising datasets. This uses Python, so you need to ensure you have a Python environment available when building."
+  },
+  {
+    "objectID": "content/index.html",
+    "href": "content/index.html",
+    "title": "Landing page",
+    "section": "",
+    "text": "This is the home page of the website, written in markdown. You might want to embed the dashboard here directly, or just have an information screen if you don’t want to overwhelm users.\nFor this example, I’ve kept this page minimal and have added a button below to view the webapp (or you can use the navbar at the top).\nOf course, this can be made more colourful and friendly, with the addition of images, illustrations, etc.\n🗖 View Dashboard Fullscreen"
+  },
+  {
     "objectID": "content/dashboard-info.html",
     "href": "content/dashboard-info.html",
     "title": "Dashboard",
@@ -19,12 +33,5 @@
     "title": "Dashboard",
     "section": "Embedded dashboard",
     "text": "Embedded dashboard\nNote - the fullscreen version linked below currently isn’t correctly pulling through data because of the directory structure - on the list to fix!\nYou will see a blank box below if you haven’t accepted the necessary cookies.\n\n\nFilter by Region:  All \n\nLayer Type  Counties  Schools  Clinics  All Layers\n\n\n\n☰ Filters\n\n🗖 View Fullscreen"
-  },
-  {
-    "objectID": "content/index.html",
-    "href": "content/index.html",
-    "title": "Landing page",
-    "section": "",
-    "text": "This is the home page of the website, written in markdown. You might want to embed the dashboard here directly, or just have an information screen if you don’t want to overwhelm users.\nFor this example, I’ve kept this page minimal and have added a button below to view the webapp (or you can use the navbar at the top).\nOf course, this can be made more colourful and friendly, with the addition of images, illustrations, etc.\n🗖 View Dashboard Fullscreen"
   }
 ]
