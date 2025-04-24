@@ -10,7 +10,7 @@ Currently pausing the full-HTML full-screen version of the app and focusing inst
 - Open, open-source
 - Static framework that doesn't require a server - as cheap as possible
 - Extensible
-  - While we are focusing on a specific location, the tool sould be useable for other geographic regions.
+  - While we are focusing on a specific location, the tool should be useable for other geographic regions.
 
 ## Framework
 
@@ -60,3 +60,13 @@ These folder contain the local fonts to prevent API calls to Google fonts which 
 ## Fonts and GDPR guidelines
 
 In order to comply with GDPR guidelines, the custom scss files for this project prevent Quarto loading Google Fonts on the fly. Instead, all custom fonts must be stored locally in this directory. See previous section for directory structure.
+
+## Work notes
+
+- Have added in a very small subset of the park run data. Essentially, if we want to filter by location, we need columns in this (or any) data set that contain some form of location id (or different columns with different types of location ids, e.g. local authority vs. region etc.)
+
+### To do:
+
+- Clustering: try to recreate the clustering I previously did in leaflewt in Python with a plugin. See if we can customise this so it groups points by the location id specified above.
+- For the Layers, change from radio to multiselect; maybe add in a toggle on/off all option?
+- Present the data in a sortable table with similar filtering options; need to have a think about how best to present this.

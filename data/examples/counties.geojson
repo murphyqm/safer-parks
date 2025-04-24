@@ -21,6 +21,23 @@
       {
         "type": "Feature",
         "properties": {
+          "location_id": "UK",
+          "name": "Area in the UK"
+        },
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [[
+            [-1.75, 53.80],
+            [-0.75, 53.80],
+            [-0.75, 54.80],
+            [-1.75, 54.80],
+            [-1.75, 53.80]
+          ]]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
           "location_id": "beta",
           "name": "Sample Area 2"
         },
