@@ -24,7 +24,6 @@ This is a relatively simple webapp, but even so contains a number of different f
 
 safer-parks/
 ├── assets/
-│   ├── data/
 │   ├── fonts/
 │   ├── img/
 │   ├── js/
@@ -32,6 +31,7 @@ safer-parks/
 ├── content/
 │   ├── index.qmd
 │   └── ...
+├── data/
 ├── docs/
 │   ├── index.html
 │   └── ...
@@ -47,9 +47,9 @@ To [modify and update this file tree, follow this link](https://tree.nathanfrien
 
 This folder contains the built content produced by `quarto render` and shouldn't be modified by hand.
 
-### `assets/data/`
+### `data/`
 
-We may decide instead to point at an external repository for the dataset; however for the moment this folder exists to hold small datasets that are used by the webapp. This is inside the assets folder so that it is copied across when the website is built.
+We may decide instead to point at an external repository for the dataset; however for the moment this folder exists to hold small datasets that are used by the webapp.
 
 ### `assets/fonts/` and `assets/styles/fonts.css`
 
