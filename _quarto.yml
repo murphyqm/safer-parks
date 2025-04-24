@@ -1,0 +1,26 @@
+project:
+  type: website
+  output-dir: docs/
+  resources: 
+    - "data/examples/*.geojson"
+
+website:
+  title: "Safer Parks"
+  cookie-consent:
+    type: express
+    style: headline
+  navbar:
+    left:
+      - href: content/index.qmd
+        text: Home
+      - content/dashboard-info.qmd
+      - content/full-screen.qmd
+
+format:
+  html:
+    theme: [assets/styles/custom.scss, cosmo]
+    css: [assets/styles/styles.css, assets/styles/fonts.css]
+    toc: true
+
+
+

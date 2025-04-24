@@ -1,0 +1,66 @@
+---
+title: "Dashboard: no margins"
+format: 
+  html:
+    page-layout: custom
+---
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+<style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: hidden; /* Hide scrollbars */
+    }
+    #map {
+      height: calc(100vh - 80px) !important; 
+      margin-top: -40px !important;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+    h1.title, .title.h1 {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-bottom: 0px;
+    font-size: 0.9rem;
+    display: none;
+    }
+    footer {
+    z-index: 1000;
+    display: block;
+    position: absolute;
+    margin: 0 0 auto auto;
+    max-height: 200px;
+    }
+    @media (min:width: 768px) {
+        .nav-footer-right {
+            display: block;
+        }
+    }
+  </style>
+
+<div id="fullscreen-map-wrapper">
+<div id="controls">
+<label for="regionFilter">Filter by Region:</label>
+<select id="regionFilter">
+    <option value="">All</option>
+</select>
+
+<fieldset>
+    <legend><strong>Layer Type</strong></legend>
+    <label><input type="radio" name="layerType" value="counties" checked> Counties</label>
+    <label><input type="radio" name="layerType" value="schools"> Schools</label>
+    <label><input type="radio" name="layerType" value="clinics"> Clinics</label>
+    <label><input type="radio" name="layerType" value="all"> All Layers</label>
+    </fieldset>      
+</div>
+<button id="toggleSidebar">☰ Filters</button>
+<div id="map"></div>                       
+</div>
+
+<script type="text/plain" cookie-consent="strictly-necessary" src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<script type="text/plain" cookie-consent="strictly-necessary" src="../assets/js/script.js"></script>
+
+<div style="flex-grow:1"></div>

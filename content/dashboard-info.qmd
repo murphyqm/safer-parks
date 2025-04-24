@@ -1,0 +1,44 @@
+---
+title: "Dashboard"
+---
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+
+This is the dashboard page. It includes an HTML snippet (and loads in custom javascript) in order to provide the dashboard below. While this is a fully functional version of the dashboard, presentation like this (in a frame within a website) might be restrictive and make it more difficult to use, so there is also a provided link to go full-size.
+
+At the moment, both the embedded version and the full screen version are two separate, fully-functional replicated apps to ensure they work nicely in both formats; however as we develop the app this may become tedious and we might instead implement conditional styling that updates depending on whether you are looking at the content full-screen or not.
+
+Alternatively, if the homepage of the webapp is a text-based page that describes the use of the app, we might not have to keep this "framing page" at all, and instead the "Dashboard" link directly launches the full-screen version. We just need to keep in mind that the user needs some context and direction before being thrown in at the deep-end with the tool.
+
+## Logistical details
+
+At the top of this page, the leaflet css stylesheet is loaded. We can include a note for this in the cookies banner - I'll check the GDPR guidelines surrounding this; for the moment I have also copied this locally to prevent any issues.
+
+## Embedded dashboard
+
+Note - the fullscreen version linked below currently isn't correctly pulling through data because of the directory structure - on the list to fix!
+
+You will see a blank box below if you haven't accepted the necessary cookies.
+
+<div id="map-wrapper" style="position: relative;">
+<div id="controls">
+<label for="regionFilter">Filter by Region:</label>
+<select id="regionFilter">
+    <option value="">All</option>
+</select>
+
+<fieldset>
+    <legend><strong>Layer Type</strong></legend>
+    <label><input type="radio" name="layerType" value="counties" checked> Counties</label>
+    <label><input type="radio" name="layerType" value="schools"> Schools</label>
+    <label><input type="radio" name="layerType" value="clinics"> Clinics</label>
+    <label><input type="radio" name="layerType" value="all"> All Layers</label>
+    </fieldset>      
+</div>
+<button id="toggleSidebar">☰ Filters</button>
+<a href="../assets/html/map_fullscreen.html" target="_blank" id="fullscreenBtn">🗖 View Fullscreen</a>
+<div id="map"></div>                       
+</div>
+
+<script type="text/plain" cookie-consent="strictly-necessary" src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<script type="text/plain" cookie-consent="strictly-necessary" src="../assets/js/script.js"></script>
