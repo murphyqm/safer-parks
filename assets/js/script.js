@@ -25,9 +25,9 @@ let data = {
 
 async function loadData() {
     const [countiesRes, schoolsRes, clinicsRes] = await Promise.all([
-    fetch('../../data/examples/counties.geojson').then(res => res.json()),
-    fetch('../../data/examples/schools.geojson').then(res => res.json()),
-    fetch('../../data/examples/clinics.geojson').then(res => res.json())
+    fetch('../data/examples/counties.geojson').then(res => res.json()),
+    fetch('../data/examples/schools.geojson').then(res => res.json()),
+    fetch('../data/examples/clinics.geojson').then(res => res.json())
     ]);
 
     data.counties = countiesRes.features;
