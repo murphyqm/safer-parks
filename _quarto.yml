@@ -4,7 +4,9 @@ project:
 
 website:
   title: "Safer Parks"
-  cookie-consent: true
+  cookie-consent:
+    type: express
+    style: headline
   navbar:
     left:
       - href: content/index.qmd
