@@ -11,7 +11,7 @@
     "href": "content/dashboard-info.html#logistical-details",
     "title": "Dashboard",
     "section": "Logistical details",
-    "text": "Logistical details\nAt the top of this page, the leaflet css stylesheet is loaded. We can include a note for this in the cookies banner - I’ll check the GDPR guidelines surrounding this; for the moment I have also copied this locally to prevent any issues."
+    "text": "Logistical details\nAt the top of this page, the leaflet css stylesheet is loaded. We can include a note for this in the cookies banner, or load it locally. Currently, it is loaded locally."
   },
   {
     "objectID": "content/dashboard-info.html#embedded-dashboard",

@@ -119,7 +119,7 @@ cookieconsent.run({
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="../content/full-screen.html"> 
-<span class="menu-text">Dashboard: no margins</span></a>
+<span class="menu-text">Dashboard: fullscreen</span></a>
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
@@ -164,13 +164,14 @@ cookieconsent.run({
 </header>
 
 
-<p><link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"></p>
+<!-- <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" /> -->
+<p><link rel="stylesheet" href="../assets/styles/leaflet.css"></p>
 <p>This is the dashboard page. It includes an HTML snippet (and loads in custom javascript) in order to provide the dashboard below. While this is a fully functional version of the dashboard, presentation like this (in a frame within a website) might be restrictive and make it more difficult to use, so there is also a provided link to go full-size.</p>
 <p>At the moment, both the embedded version and the full screen version are two separate, fully-functional replicated apps to ensure they work nicely in both formats; however as we develop the app this may become tedious and we might instead implement conditional styling that updates depending on whether you are looking at the content full-screen or not.</p>
 <p>Alternatively, if the homepage of the webapp is a text-based page that describes the use of the app, we might not have to keep this “framing page” at all, and instead the “Dashboard” link directly launches the full-screen version. We just need to keep in mind that the user needs some context and direction before being thrown in at the deep-end with the tool.</p>
 <section id="logistical-details" class="level2">
 <h2 class="anchored" data-anchor-id="logistical-details">Logistical details</h2>
-<p>At the top of this page, the leaflet css stylesheet is loaded. We can include a note for this in the cookies banner - I’ll check the GDPR guidelines surrounding this; for the moment I have also copied this locally to prevent any issues.</p>
+<p>At the top of this page, the leaflet css stylesheet is loaded. We can include a note for this in the cookies banner, or load it locally. Currently, it is loaded locally.</p>
 </section>
 <section id="embedded-dashboard" class="level2">
 <h2 class="anchored" data-anchor-id="embedded-dashboard">Embedded dashboard</h2>
@@ -186,13 +187,13 @@ cookieconsent.run({
 <button id="toggleSidebar">
 ☰ Filters
 </button>
-<a href="../assets/html/map_fullscreen.html" target="_blank" id="fullscreenBtn">🗖 View Fullscreen</a>
+<a href="../content/full-screen.html" id="fullscreenBtn">🗖 View Fullscreen</a>
 <div id="map">
 
 </div>
 </div>
-<script type="text/plain" cookie-consent="strictly-necessary" src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-<script type="text/plain" cookie-consent="strictly-necessary" src="../assets/js/script.js"></script>
+<script type="text/plain" cookie-consent="functionality" src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<script type="text/plain" cookie-consent="functionality" src="../assets/js/script.js"></script>
 
 
 </section>

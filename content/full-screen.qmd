@@ -1,11 +1,12 @@
 ---
-title: "Dashboard: no margins"
+title: "Dashboard: fullscreen"
 format: 
   html:
     page-layout: custom
 ---
 
-<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+<!-- <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" /> -->
+<link rel="stylesheet" href="../assets/styles/leaflet.css" />
 <style>
     body, html {
       margin: 0;
@@ -50,10 +51,11 @@ format:
 
 <fieldset>
     <legend><strong>Layer Type</strong></legend>
-    <label><input type="radio" name="layerType" value="counties" checked> Counties</label>
+    <label><input type="radio" name="layerType" value="counties"> Counties</label>
     <label><input type="radio" name="layerType" value="schools"> Schools</label>
     <label><input type="radio" name="layerType" value="clinics"> Clinics</label>
-    <label><input type="radio" name="layerType" value="all"> All Layers</label>
+    <label><input type="radio" name="layerType" value="parkruns"> Park Runs</label>
+    <label><input type="radio" name="layerType" value="all" checked> All Layers</label>
     </fieldset>      
 </div>
 <button id="toggleSidebar">☰ Filters</button>

@@ -3,6 +3,8 @@ project:
   output-dir: docs/
   resources: 
     - "data/examples/*.geojson"
+    - "data/*.geojson"
+    - "assets/styles/*.css"
 
 website:
   title: "Safer Parks"

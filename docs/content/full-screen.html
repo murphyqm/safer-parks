@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Dashboard: no margins – Safer Parks</title>
+<title>Dashboard: fullscreen – Safer Parks</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -119,7 +119,7 @@ cookieconsent.run({
   </li>  
   <li class="nav-item">
     <a class="nav-link active" href="../content/full-screen.html" aria-current="page"> 
-<span class="menu-text">Dashboard: no margins</span></a>
+<span class="menu-text">Dashboard: fullscreen</span></a>
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
@@ -136,7 +136,7 @@ cookieconsent.run({
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Dashboard: no margins</h1>
+<h1 class="title">Dashboard: fullscreen</h1>
 </div>
 
 
@@ -153,7 +153,8 @@ cookieconsent.run({
 </header>
 
 
-<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css">
+<!-- <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" /> -->
+<link rel="stylesheet" href="../assets/styles/leaflet.css">
 <style>
     body, html {
       margin: 0;
@@ -192,7 +193,7 @@ cookieconsent.run({
 <div id="controls">
 <p><label for="regionFilter">Filter by Region:</label> <select id="regionFilter"> <option value="">All</option> </select></p>
 <fieldset>
-<legend><strong>Layer Type</strong></legend> <label><input type="radio" name="layerType" value="counties" checked=""> Counties</label> <label><input type="radio" name="layerType" value="schools"> Schools</label> <label><input type="radio" name="layerType" value="clinics"> Clinics</label> <label><input type="radio" name="layerType" value="all"> All Layers</label>
+<legend><strong>Layer Type</strong></legend> <label><input type="radio" name="layerType" value="counties"> Counties</label> <label><input type="radio" name="layerType" value="schools"> Schools</label> <label><input type="radio" name="layerType" value="clinics"> Clinics</label> <label><input type="radio" name="layerType" value="parkruns"> Park Runs</label> <label><input type="radio" name="layerType" value="all" checked=""> All Layers</label>
 </fieldset>
 </div>
 <button id="toggleSidebar">

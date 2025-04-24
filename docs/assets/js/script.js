@@ -14,25 +14,29 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 const layers = {
     counties: L.layerGroup().addTo(map),
     schools: L.layerGroup(),
-    clinics: L.layerGroup()
+    clinics: L.layerGroup(),
+    parkruns: L.layerGroup()
 };
 
 let data = {
     counties: [],
     schools: [],
-    clinics: []
+    clinics: [],
+    parkruns: []
 };
 
 async function loadData() {
-    const [countiesRes, schoolsRes, clinicsRes] = await Promise.all([
+    const [countiesRes, schoolsRes, clinicsRes, parkrunsRes] = await Promise.all([
     fetch('../data/examples/counties.geojson').then(res => res.json()),
     fetch('../data/examples/schools.geojson').then(res => res.json()),
-    fetch('../data/examples/clinics.geojson').then(res => res.json())
+    fetch('../data/examples/clinics.geojson').then(res => res.json()),
+    fetch('../data/parkrun_subset.geojson').then(res => res.json())
     ]);
 
     data.counties = countiesRes.features;
     data.schools = schoolsRes.features;
     data.clinics = clinicsRes.features;
+    data.parkruns = parkrunsRes.features;
 
     populateDropdown();
     updateMap();
@@ -43,7 +47,8 @@ function populateDropdown() {
     const locationIDs = new Set([
     ...data.counties.map(f => f.properties.location_id),
     ...data.schools.map(f => f.properties.location_id),
-    ...data.clinics.map(f => f.properties.location_id)
+    ...data.clinics.map(f => f.properties.location_id),
+    ...data.parkruns.map(f => f.properties.location_id),
     ]);
 
     [...locationIDs].sort().forEach(id => {
@@ -100,10 +105,13 @@ if (selectedLayer === 'all') {
     showLayer('counties', 'blue');
     showLayer('schools', 'orange', 'school_name');
     showLayer('clinics', 'green', 'clinic_name');
+    showLayer('parkruns', 'pink', 'EventLongName');
 } else {
     const color = selectedLayer === 'counties' ? 'blue' :
+                selectedLayer === 'parkruns' ? 'pink' :
                 selectedLayer === 'schools' ? 'orange' : 'green';
     const nameField = selectedLayer === 'schools' ? 'school_name' :
+                    selectedLayer === 'parkruns' ? 'EventLongName' :
                     selectedLayer === 'clinics' ? 'clinic_name' : 'name';
 
     showLayer(selectedLayer, color, nameField);
