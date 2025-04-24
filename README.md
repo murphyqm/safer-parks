@@ -3,6 +3,8 @@ Work on the Safer Parks project.
 
 This repository contains the source code for a tempalte web-app to be used for the Safer Parks project. This web-app is still a work-in-progress/draft. You can see the prototyping behind-the-scenes over at my [Static App Experimentation repo](https://github.com/murphyqm/static-app-experiments).
 
+Currently pausing the full-HTML full-screen version of the app and focusing instead on the version loaded inside Quarto. Juggling these two involves different file paths to the data and makes for a difficult dev experience.
+
 ## Requirements (from a purely technical standpoint):
 
 - Open, open-source
