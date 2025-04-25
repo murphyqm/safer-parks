@@ -16,9 +16,7 @@ website:
       - href: content/index.qmd
         text: Home
       - content/dashboard-info.qmd
-      - content/full-screen.qmd
-      - content/testing-control-options.qmd
-      - content/testing-table-displays.qmd
+      - content/refactoring-dashboard.qmd
 
 format:
   html:

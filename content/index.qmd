@@ -8,4 +8,4 @@ For this example, I've kept this page minimal and have added a button below to v
 
 Of course, this can be made more colourful and friendly, with the addition of images, illustrations, etc.
 
-<a href="full-screen.qmd" target="_blank">🗖 View Dashboard Fullscreen</a>
+<a href="refactoring-dashboard.qmd" target="_blank">🗖 View Dashboard Fullscreen</a>

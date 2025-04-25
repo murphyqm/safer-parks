@@ -1,0 +1,28 @@
+---
+title: "Full screen dashboard"
+format: 
+  html:
+    page-layout: custom
+---
+
+<link rel="stylesheet" href="../assets/styles/leaflet.css" />
+<link rel="stylesheet" href="../assets/styles/fullscreen.css" />
+
+<div id="fullscreen-map-wrapper">
+<div id="controls">
+<label for="regionFilter">Filter by Region:</label>
+<select id="regionFilter">
+    <option value="">All</option>
+</select>
+
+<fieldset>
+<!-- Checkboxes will be dynamically generated -->
+</fieldset>     
+</div>
+<button id="toggleSidebar">☰ Filters</button>
+<div id="map"></div>                       
+</div>
+
+<script type="text/plain" cookie-consent="strictly-necessary" src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<script type="text/plain" cookie-consent="strictly-necessary" src="../assets/js/script-refactoring.js"></script>
+<script type="text/plain" cookie-consent="strictly-necessary" src="../assets/js/config-refactoring.js"></script>

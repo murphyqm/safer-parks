@@ -1,6 +1,7 @@
 ---
 title: "Testing table displays"
-
 ---
 
 Testing different display options for organising datasets. This uses Python, so you need to ensure you have a Python environment available when building.
+
+**On pause while working on refactoring**
