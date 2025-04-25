@@ -3,7 +3,7 @@ document.getElementById('toggleSidebar').addEventListener('click', function() {
   sidebar.classList.toggle('visible');
 });
 
-const map = L.map('map').setView([40.5, -100.5], 5);
+const map = L.map('map').setView([53.8, -1.5], 5);
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
   attribution: '© OpenStreetMap contributors'
 }).addTo(map);
@@ -99,7 +99,7 @@ function updateMap() {
         })
       : L.geoJSON(features, {
           pointToLayer: (f, latlng) => L.circleMarker(latlng, {
-            radius: 6,
+            radius: 15,
             fillColor: cfg.color,
             color: '#fff',
             weight: 1,

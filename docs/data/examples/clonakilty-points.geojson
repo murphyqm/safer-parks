@@ -1,0 +1,65 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+      {
+        "type": "Feature",
+        "properties": {
+          "location_id": "Clon",
+          "Name": "Location 1"
+        },
+        "geometry": {
+          "coordinates": [
+            -8.893827490473342,
+            51.62269906303828
+          ],
+          "type": "Point"
+        },
+        "id": 1
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "location_id": "Clon",
+          "Name": "Location 2"
+        },
+        "geometry": {
+          "coordinates": [
+            -8.890217905596785,
+            51.621676172124666
+          ],
+          "type": "Point"
+        },
+        "id": 2
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "location_id": "Clon",
+          "Name": "Location 3"
+        },
+        "geometry": {
+          "coordinates": [
+            -8.88721201435851,
+            51.62254289797838
+          ],
+          "type": "Point"
+        },
+        "id": 3
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "location_id": "Clon",
+          "Name": "Location 4"
+        },
+        "geometry": {
+          "coordinates": [
+            -8.886985629245714,
+            51.62178548981129
+          ],
+          "type": "Point"
+        },
+        "id": 4
+      }
+    ]
+  }
