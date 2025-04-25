@@ -24,6 +24,7 @@ This webapp is built using a combination of HTML, CSS, JavaScript, and Markdown.
 
 This is a relatively simple webapp, but even so contains a number of different files and folders to keep track of. In order to ensure a clean division of written content (`.qmd` and `.md` files), utilities (CSS and JS snippets, images etc.), and underlying datasets, this repository uses the following structure:
 
+```text
 safer-parks/
 ├── assets/
 │   ├── fonts/
@@ -42,6 +43,7 @@ safer-parks/
 ├── .quarto/
 ├── README.md
 └── LICENSE.txt
+```
 
 To [modify and update this file tree, follow this link](https://tree.nathanfriend.com/?s=(%27options!(%27fancy!true~fullPath!false~trailingSlash!true~rootDot!false)~3(%273%27safer-parks*assets0font20img%2F0j20style2*content4qmd6data7docs4html6_quarto.yml*.gitignore*.quarto7README.md*LICENSE.txt%27)~version!%271%27)*%5Cn50*52s%2F3source!40index.5%20%2060...*7%2F*%017654320*).
 
