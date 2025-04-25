@@ -18,7 +18,7 @@ website:
       - content/dashboard-info.qmd
       - content/full-screen.qmd
       - content/testing-control-options.qmd
-      - content/testing-table-displays.qmd
+      - content/refactoring-dashboard.qmd
 
 format:
   html:
