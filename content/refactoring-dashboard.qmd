@@ -1,5 +1,5 @@
 ---
-title: "Refactoring"
+title: "Full screen dashboard"
 format: 
   html:
     page-layout: custom

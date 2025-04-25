@@ -18,7 +18,7 @@
     "href": "content/dashboard-info.html",
     "title": "Dashboard",
     "section": "",
-    "text": "This is the dashboard page. It includes an HTML snippet (and loads in custom javascript) in order to provide the dashboard below. While this is a fully functional version of the dashboard, presentation like this (in a frame within a website) might be restrictive and make it more difficult to use, so there is also a provided link to go full-size.\nAt the moment, both the embedded version and the full screen version are two separate, fully-functional replicated apps to ensure they work nicely in both formats; however as we develop the app this may become tedious and we might instead implement conditional styling that updates depending on whether you are looking at the content full-screen or not.\nAlternatively, if the homepage of the webapp is a text-based page that describes the use of the app, we might not have to keep this “framing page” at all, and instead the “Dashboard” link directly launches the full-screen version. We just need to keep in mind that the user needs some context and direction before being thrown in at the deep-end with the tool."
+    "text": "This is the dashboard page. It includes an HTML snippet (and loads in custom javascript) in order to provide the dashboard below. While this is a fully functional version of the dashboard, presentation like this (in a frame within a website) might be restrictive and make it more difficult to use, so there is also a provided link to go full-size.\nAlternatively, if the homepage of the webapp is a text-based page that describes the use of the app, we might not have to keep this “framing page” at all, and instead the “Dashboard” link directly launches the full-screen version. We just need to keep in mind that the user needs some context and direction before being thrown in at the deep-end with the tool."
   },
   {
     "objectID": "content/dashboard-info.html#logistical-details",
@@ -32,6 +32,6 @@
     "href": "content/dashboard-info.html#embedded-dashboard",
     "title": "Dashboard",
     "section": "Embedded dashboard",
-    "text": "Embedded dashboard\nNote - the fullscreen version linked below currently isn’t correctly pulling through data because of the directory structure - on the list to fix!\nYou will see a blank box below if you haven’t accepted the necessary cookies.\n\n\nFilter by Region:  All \n\nLayer Type  Counties  Schools  Clinics  All Layers\n\n\n\n☰ Filters\n\n🗖 View Fullscreen"
+    "text": "Embedded dashboard\nYou will see a blank box below if you haven’t accepted the necessary cookies.\n\n\nFilter by Region:  All \n\n\n\n\n\n☰ Filters\n\n🗖 View Fullscreen"
   }
 ]

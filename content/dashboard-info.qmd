@@ -7,8 +7,6 @@ title: "Dashboard"
 
 This is the dashboard page. It includes an HTML snippet (and loads in custom javascript) in order to provide the dashboard below. While this is a fully functional version of the dashboard, presentation like this (in a frame within a website) might be restrictive and make it more difficult to use, so there is also a provided link to go full-size.
 
-At the moment, both the embedded version and the full screen version are two separate, fully-functional replicated apps to ensure they work nicely in both formats; however as we develop the app this may become tedious and we might instead implement conditional styling that updates depending on whether you are looking at the content full-screen or not.
-
 Alternatively, if the homepage of the webapp is a text-based page that describes the use of the app, we might not have to keep this "framing page" at all, and instead the "Dashboard" link directly launches the full-screen version. We just need to keep in mind that the user needs some context and direction before being thrown in at the deep-end with the tool.
 
 ## Logistical details
@@ -17,7 +15,6 @@ At the top of this page, the leaflet css stylesheet is loaded. We can include a 
 
 ## Embedded dashboard
 
-Note - the fullscreen version linked below currently isn't correctly pulling through data because of the directory structure - on the list to fix!
 
 You will see a blank box below if you haven't accepted the necessary cookies.
 
@@ -29,17 +26,14 @@ You will see a blank box below if you haven't accepted the necessary cookies.
 </select>
 
 <fieldset>
-    <legend><strong>Layer Type</strong></legend>
-    <label><input type="radio" name="layerType" value="counties" checked> Counties</label>
-    <label><input type="radio" name="layerType" value="schools"> Schools</label>
-    <label><input type="radio" name="layerType" value="clinics"> Clinics</label>
-    <label><input type="radio" name="layerType" value="all"> All Layers</label>
-    </fieldset>      
+<!-- Checkboxes will be dynamically generated -->
+</fieldset>     
 </div>
 <button id="toggleSidebar">☰ Filters</button>
-<a href="full-screen.qmd" id="fullscreenBtn">🗖 View Fullscreen</a>
+<a href="refactoring-dashboard.qmd" id="fullscreenBtn">🗖 View Fullscreen</a>
 <div id="map"></div>                       
 </div>
 
-<script type="text/plain" cookie-consent="functionality" src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-<script type="text/plain" cookie-consent="functionality" src="../assets/js/script.js"></script>
+<script type="text/plain" cookie-consent="strictly-necessary" src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<script type="text/plain" cookie-consent="strictly-necessary" src="../assets/js/script-refactoring.js"></script>
+<script type="text/plain" cookie-consent="strictly-necessary" src="../assets/js/config-refactoring.js"></script>
