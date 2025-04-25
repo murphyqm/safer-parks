@@ -35,7 +35,7 @@ const LAYER_CONFIGS = {
       file: "../data/parkrun_subset.geojson",
       nameField: "EventLongName"
     },
-    parkruns: {
+    clon_points: {
       label: "Clonakilty points of interest",
       color: "pink",
       type: "point",
