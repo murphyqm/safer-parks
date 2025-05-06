@@ -1,0 +1,245 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "Park name": "Red Park",
+        "Local Authority Area": "Rainbow Suburb",
+        "Score 1": 7,
+        "Score 2": 1.5,
+        "Other measure": "Yes",
+        "Guideline": 1,
+        "Link": "auto"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.893827490473342,
+          51.62269906303828
+        ]
+      },
+      "id": 1
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Park name": "Blue Park",
+        "Local Authority Area": "Rainbow Suburb",
+        "Score 1": 3,
+        "Score 2": 2.8,
+        "Other measure": "No",
+        "Guideline": 2,
+        "Link": "auto"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.893827490473353,
+          51.62269906403828
+        ]
+      },
+      "id": 2
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Park name": "Green Park",
+        "Local Authority Area": "Rainbow Suburb",
+        "Score 1": 2,
+        "Score 2": 9.3,
+        "Other measure": "No",
+        "Guideline": 3,
+        "Link": "auto"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.893827490473441,
+          51.62269906503828
+        ]
+      },
+      "id": 3
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Park name": "Orange Park",
+        "Local Authority Area": "Rainbow Suburb",
+        "Score 1": 9,
+        "Score 2": 4.5,
+        "Other measure": "Yes",
+        "Guideline": 3,
+        "Link": "auto"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.893827490473543,
+          51.62269906603828
+        ]
+      },
+      "id": 4
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Park name": "Triangle Park",
+        "Local Authority Area": "Shapesville",
+        "Score 1": 8,
+        "Score 2": 6.2,
+        "Other measure": "No",
+        "Guideline": 4,
+        "Link": "auto"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.993827490473342,
+          51.72269906303828
+        ]
+      },
+      "id": 5
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Park name": "Circle Park",
+        "Local Authority Area": "Shapesville",
+        "Score 1": 3,
+        "Score 2": 1.7,
+        "Other measure": "Yes",
+        "Guideline": 2,
+        "Link": "auto"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.993827490473352,
+          51.72269906403828
+        ]
+      },
+      "id": 6
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Park name": "Square Park",
+        "Local Authority Area": "Shapesville",
+        "Score 1": 5,
+        "Score 2": 9,
+        "Other measure": "Yes",
+        "Guideline": 1,
+        "Link": "auto"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.993827490473443,
+          51.72269906503828
+        ]
+      },
+      "id": 7
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Park name": "Heart Park",
+        "Local Authority Area": "Shapesville",
+        "Score 1": 4,
+        "Score 2": 5.6,
+        "Other measure": "Yes",
+        "Guideline": 3,
+        "Link": "auto"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.993827490473542,
+          51.72269906603828
+        ]
+      },
+      "id": 8
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Park name": "Waterfall Park",
+        "Local Authority Area": "Landscapes Road",
+        "Score 1": 7,
+        "Score 2": 8.3,
+        "Other measure": "No",
+        "Guideline": 5,
+        "Link": "custom"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.793827490473342,
+          51.42269906303828
+        ]
+      },
+      "id": 9
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Park name": "Mountain Park",
+        "Local Authority Area": "Landscapes Road",
+        "Score 1": 9,
+        "Score 2": 4.6,
+        "Other measure": "Yes",
+        "Guideline": 3,
+        "Link": "auto"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.793827490473353,
+          51.42269906403828
+        ]
+      },
+      "id": 10
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Park name": "River Park",
+        "Local Authority Area": "Landscapes Road",
+        "Score 1": 6,
+        "Score 2": 7.2,
+        "Other measure": "No",
+        "Guideline": 1,
+        "Link": "auto"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.793827490473442,
+          51.42269906503828
+        ]
+      },
+      "id": 11
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Park name": "Forest Park",
+        "Local Authority Area": "Landscapes Road",
+        "Score 1": 4,
+        "Score 2": 2.8,
+        "Other measure": "Yes",
+        "Guideline": 1,
+        "Link": "custom"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.793827490473541,
+          51.42269906603828
+        ]
+      },
+      "id": 12
+    }
+  ]
+}

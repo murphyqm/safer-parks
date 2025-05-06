@@ -1,0 +1,13 @@
+Park name,Local Authority Area,Co-ordinates,Score 1,Score 2,Other measure,Guideline,Link
+Red Park,Rainbow Suburb,"[-8.893827490473342, 51.62269906303828]",7,1.5,Yes,1,auto
+Blue Park,Rainbow Suburb,"[-8.893827490473352, 51.62269906403828]",3,2.8,No,2,auto
+Green Park,Rainbow Suburb,"[-8.893827490473442, 51.62269906503828]",2,9.3,No,3,auto
+Orange Park,Rainbow Suburb,"[-8.893827490473542, 51.62269906603828]",9,4.5,Yes,3,auto
+Triangle Park,Shapesville,"[-8.993827490473342, 51.72269906303828]",8,6.2,No,4,auto
+Circle Park,Shapesville,"[-8.993827490473352, 51.72269906403828]",3,1.7,Yes,2,auto
+Square Park,Shapesville,"[-8.993827490473442, 51.72269906503828]",5,9,Yes,1,auto
+Heart Park,Shapesville,"[-8.993827490473542, 51.72269906603828]",4,5.6,Yes,3,auto
+Waterfall Park,Landscapes Road,"[-8.793827490473342, 51.42269906303828]",7,8.3,No,5,custom
+Mountain Park,Landscapes Road,"[-8.793827490473352, 51.42269906403828]",9,4.6,Yes,3,auto
+River Park,Landscapes Road,"[-8.793827490473442, 51.42269906503828]",6,7.2,No,1,auto
+Forest Park,Landscapes Road,"[-8.793827490473542, 51.42269906603828]",4,2.8,Yes,1,custom
