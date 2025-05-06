@@ -1,5 +1,5 @@
 ---
-title: "Full screen dashboard"
+title: "Testing point clustering"
 format: 
   html:
     page-layout: custom
@@ -7,6 +7,9 @@ format:
 
 <link rel="stylesheet" href="../assets/styles/leaflet.css" />
 <link rel="stylesheet" href="../assets/styles/fullscreen.css" />
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster/dist/MarkerCluster.css" />
+<link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster/dist/MarkerCluster.Default.css" />
 
 <div id="fullscreen-map-wrapper">
 <div id="controls">
@@ -25,4 +28,5 @@ format:
 
 <script type="text/plain" cookie-consent="strictly-necessary" src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 <script type="text/plain" cookie-consent="strictly-necessary" src="../assets/js/config-refactoring.js"></script>
-<script type="text/plain" cookie-consent="strictly-necessary" src="../assets/js/script-refactoring.js"></script>
+<script type="text/plain" cookie-consent="strictly-necessary" src="../assets/js/testing-clustering.js"></script>
+<script type="text/plain" cookie-consent="strictly-necessary" src="https://unpkg.com/leaflet.markercluster/dist/leaflet.markercluster.js"></script>

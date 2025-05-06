@@ -17,6 +17,8 @@ website:
         text: Home
       - content/dashboard-info.qmd
       - content/refactoring-dashboard.qmd
+      - content/testing-point-clustering.qmd
+      - content/different-basemap-layers.qmd
 
 format:
   html:
