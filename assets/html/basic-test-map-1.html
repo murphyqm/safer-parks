@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Fullscreen Map</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+        crossorigin=""/>
+    <!-- Make sure you put this AFTER Leaflet's CSS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+    crossorigin=""></script>
+
+    <style>
+    #map {
+      height: 500px;
+      width: 500px;
+    }
+  </style>
+</head>
+
+
+<body>
+    <div style="position:absolute; top:10px; left:10px; z-index:1000; background:white; padding:6px; border-radius:4px;">
+        <button id="selectAllBtn">Select All</button>
+        <button id="deselectAllBtn">Deselect All</button><br/>
+        <input
+          type="text"
+          id="searchBox"
+          placeholder="Search park or authority..."
+          style="margin-top:5px; width:180px;"
+        />
+    </div>
+    <div id="map"></div>
+    
+
+</body>
+
+<script type="text/javascript">
+    let allFeatureLayers = []; // Holds references for search
+    
+    function getColorByGuideline(guideline) {
+        switch (guideline) {
+            case 3: return "green";
+            case 4: return "orange";
+            case 2: return "red";
+            default: return "gray";
+        }
+    }
+
+    async function addGeoJson(filepath) {
+        const response = await fetch(filepath);
+        const data = await response.json();
+
+        const layersByAuthority = {};
+
+        L.geoJson(data, {
+            pointToLayer: function (feature, latlng) {
+                return L.circleMarker(latlng, {
+                    radius: 6,
+                    fillColor: getColorByGuideline(feature.properties["Guideline"]),
+                    color: "#000",
+                    weight: 1,
+                    opacity: 1,
+                    fillOpacity: 0.8
+                });
+            },
+            onEachFeature: function (feature, layer) {
+                // Store for search
+                allFeatureLayers.push({ feature, layer });
+                // create popup cards
+                layer.bindPopup(
+                    feature.properties["Park name"] +
+                    " in " + "<b>" +
+                    feature.properties["Local Authority Area"] +
+                    "</b>" +
+                    "</br>" +
+                    "Here is some text." +
+                    "</br>" +
+                    "Score A: " +
+                    feature.properties["Score 1"] +
+                    "</br>" +
+                    "Score B: " +
+                    feature.properties["Score 2"] +
+                    "</br>" +
+                    "Does this area have X feature? " +
+                    feature.properties["Other measure"] +
+                    "</br>" +
+                    "Guideline for this location: " +
+                    feature.properties["Guideline"]
+                );
+                // group by local authority area
+                const authority = feature.properties["Local Authority Area"];
+                if (!layersByAuthority[authority]) {
+                    layersByAuthority[authority] = L.layerGroup();
+                }
+                layersByAuthority[authority].addLayer(layer);
+            }
+        });
+
+        return layersByAuthority;
+    }
+
+    async function setupMap() {
+        const layersByAuthority = await addGeoJson("../../data/data-processing/example-parks.geojson");
+
+        // Prepare the overlay layers for the control
+        const overlayMaps = {};
+        for (const authority in layersByAuthority) {
+            overlayMaps[authority] = layersByAuthority[authority];
+            map.addLayer(layersByAuthority[authority]); // show all layers
+        }
+
+        // Add the layer control to the map
+        L.control.layers(null, overlayMaps, { collapsed: false }).addTo(map);
+        // L.control.groupedLayers(null, overlayMaps, {
+        //     exclusiveGroups: Object.keys(layersByAuthority),
+        //     groupCheckboxes: true
+        // }).addTo(map);
+
+        // Select All
+        document.getElementById("selectAllBtn").addEventListener("click", () => {
+            for (const authority in layersByAuthority) {
+                if (!map.hasLayer(layersByAuthority[authority])) {
+                    map.addLayer(layersByAuthority[authority]);
+                }
+            }
+        });
+
+        // Deselect All
+        document.getElementById("deselectAllBtn").addEventListener("click", () => {
+            for (const authority in layersByAuthority) {
+                if (map.hasLayer(layersByAuthority[authority])) {
+                    map.removeLayer(layersByAuthority[authority]);
+                }
+            }
+        });
+
+        // Search
+        document.getElementById("searchBox").addEventListener("input", function () {
+            const query = this.value.trim().toLowerCase();
+
+            // Reset style for all layers
+            allFeatureLayers.forEach(({ layer, feature }) => {
+                layer.setStyle({
+                    radius: 6,
+                    fillColor: getColorByGuideline(feature.properties["Guideline"]),
+                    color: "#000"
+                });
+            });
+
+            if (query === "") return;
+
+            const matches = allFeatureLayers.filter(({ feature }) => {
+                const park = feature.properties["Park name"]?.toLowerCase() || "";
+                const authority = feature.properties["Local Authority Area"]?.toLowerCase() || "";
+                return park.includes(query) || authority.includes(query);
+            });
+
+            if (matches.length > 0) {
+                matches.forEach(({ layer }) => {
+                    layer.setStyle({ fillColor: "#00f", radius: 10 }); // highlight
+                    layer.openPopup();
+                });
+
+                const group = L.featureGroup(matches.map(m => m.layer));
+                // map.fitBounds(group.getBounds());
+                map.setView(group.getBounds().getCenter(), 12); // or another zoom level
+            }
+        });
+
+
+
+
+    }
+
+    var map = L.map('map').setView([51.62, -8.89], 10);
+
+    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 19,
+        attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+    }).addTo(map);
+
+    document.getElementById("searchBox").addEventListener("input", function () {
+        const query = this.value.trim().toLowerCase();
+
+        // Clear all highlights
+        allFeatures.forEach(({ layer }) => {
+            layer.setStyle({ radius: 6, color: "#000", fillColor: getColorByGuideline(layer.feature.properties["Guideline"]) });
+        });
+
+        if (query === "") return;
+
+        // Filter and highlight matches
+        let matches = allFeatures.filter(({ feature }) => {
+            const park = feature.properties["Park name"]?.toLowerCase() || "";
+            const authority = feature.properties["Local Authority Area"]?.toLowerCase() || "";
+            return park.includes(query) || authority.includes(query);
+        });
+
+        matches.forEach(({ layer }) => {
+            layer.setStyle({ radius: 10, color: "#000", fillColor: "#00f" }); // Blue highlight
+            layer.openPopup();
+        });
+
+        if (matches.length > 0) {
+            const group = L.featureGroup(matches.map(m => m.layer));
+            map.fitBounds(group.getBounds());
+        }
+    });
+
+    
+
+    setupMap();
+
+    
+
+    // let example_geojson_layer;
+    // example_geojson_layer = addGeoJson("../../data/data-processing/example-parks.geojson")
+
+    // for the geojson created, check unique values of areas
+    // const uniqueStatuses = [...new Set(example_geojson_layer.features.map(f => f.properties["Local Authority Area"]))];
+
+    // marker.bindPopup("<b>Hello world!</b><br>I am a popup.").openPopup();
+    // circle.bindPopup("I am a circle.");
+    // polygon.bindPopup("I am a polygon.");
+
+    
+    // function onMapClick(e) {
+    //     alert("You clicked the map at " + e.latlng);
+    // }
+
+    // var popup = L.popup();
+
+    // function onMapClick(e) {
+    //     popup
+    //         .setLatLng(e.latlng)
+    //         .setContent("You clicked the map at " + e.latlng.toString())
+    //         .openOn(map);
+    // }
+
+    // map.on('click', onMapClick);
+
+    // https://stackoverflow.com/questions/37023790/leaflet-create-layers-from-geojson-properties
+
+</script>
+
+</html>
